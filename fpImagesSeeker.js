@@ -1,7 +1,7 @@
 const promises = require('fs/promises');
 const fs = require('fs');
 
-const fixedPath = "\\\\fsraia01\\APPS\\FPOPULAR\\DROGARAIA\\"
+const fixedPath = "\\\\fsraia01\\APPS\\FPOPULAR\\DROGASIL\\"
 
 function mountPath({date, key}) {
     date = new Date(date).toLocaleDateString()
