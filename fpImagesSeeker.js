@@ -1,5 +1,6 @@
 const promises = require('fs/promises');
 const fs = require('fs');
+const glob = require('glob')
 
 const fixedPath = "\\\\fsraia01\\APPS\\FPOPULAR\\DROGARAIA\\"
 
@@ -13,11 +14,18 @@ function mountPath({date, key}) {
 }
 
 function listAllFiles({key, path}) {
-    fs.readdirSync(path).forEach(file => {
-        if (file.includes(key)) {
-            copyFile(`${path}\\${file}`, `.\\images\\${file}`)
-        }
-    });
+    // console.log({key, path})
+
+    glob(`${path}\\1_${key}*.jpg`, (err, files) => {
+        if (err) console.log(err)
+        else console.log(files)
+    })
+
+    // fs.readdirSync(path).forEach(file => {
+    //     if (file.includes(key)) {
+    //         copyFile(`${path}\\${file}`, `.\\images\\${file}`)
+    //     }
+    // });
 }
 
 function copyFile(source, target) {

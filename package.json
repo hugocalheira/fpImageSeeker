@@ -1,0 +1,11 @@
+{
+  "name": "fpImageSeeker",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/hugocalheira/fpImageSeeker.git",
+  "author": "Hugo Calheira Durães <hcduraes@rd.com.br>",
+  "license": "MIT",
+  "dependencies": {
+    "glob": "^8.0.3"
+  }
+}
