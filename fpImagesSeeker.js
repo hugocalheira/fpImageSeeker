@@ -13,11 +13,11 @@ function mountPath({date, key}) {
 }
 
 function listAllFiles({key, path}) {
-    fs.readdirSync(path).forEach(file => {
-        if (file.includes(key)) {
-            copyFile(`${path}\\${file}`, `.\\images\\${file}`)
-        }
-    });
+    const files = fs.readdirSync(path)
+    const filteredList = files.filter(file => file.includes(key))
+    
+    if (filteredList.length)
+        filteredList.forEach(file => copyFile(`${path}\\${file}`, `.\\images\\${file}`))
 }
 
 function copyFile(source, target) {
